@@ -1,46 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <data>
-        <variable
-            name="log"
-            type="com.genxhire.opt.handler.LogText" />
-    </data>
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/SecondaryColor"
+     android:layout_height="match_parent"
+    android:layout_width="match_parent">
 <LinearLayout
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomePage"
-    android:background="@color/SecondaryColor"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginTop="10dp">
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/toggleBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start "
-        android:textColor="@color/white"
-        android:textOff="Stop "
-        android:textOn="Start "
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+ <RelativeLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginHorizontal="10dp">
+     <androidx.appcompat.widget.SwitchCompat
+         android:id="@+id/toggleBtn"
+         android:layout_alignParentEnd="true"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:thumb="@drawable/thumb"
+         app:track="@drawable/track"
+         />
+
+     <TextView
+         android:id="@+id/otp_handler_below_text"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Otp Handler is active"
+         android:textSize="20dp"
+         android:textColor="@android:color/holo_red_dark"
+         />
+ </RelativeLayout>
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@={log.message}"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/SecondaryLightColor"
+        android:layout_marginVertical="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logs"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:layout_marginVertical="8dp"
+            android:layout_marginHorizontal="5dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:background="@color/black"/>
+    </LinearLayout>
 
 
 </LinearLayout>
 
-</layout>
+</LinearLayout>

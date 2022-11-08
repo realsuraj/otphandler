@@ -19,6 +19,8 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+
+
                 SharedPreferences sh = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
 
                 if(sh.getString("token", null) != null){

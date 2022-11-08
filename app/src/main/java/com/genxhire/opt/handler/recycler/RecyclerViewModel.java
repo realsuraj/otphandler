@@ -1,9 +1,16 @@
 package com.genxhire.opt.handler.recycler;
 
-import android.util.Log;
-
 public class RecyclerViewModel {
     String LogText;
+    int ColorInt;
+
+    public int getColorInt() {
+        return ColorInt;
+    }
+
+    public void setColorInt(int colorInt) {
+        ColorInt = colorInt;
+    }
 
     public String getLogText() {
         return LogText;
@@ -14,6 +21,11 @@ public class RecyclerViewModel {
     }
 
     public RecyclerViewModel() {
+    }
+
+    public RecyclerViewModel(String logText, int color) {
+        LogText = logText;
+        ColorInt = color;
     }
 
     public RecyclerViewModel(String name) {

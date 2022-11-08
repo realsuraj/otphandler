@@ -2,6 +2,7 @@ package com.genxhire.opt.handler.recycler;
 
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.genxhire.opt.handler.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 // Extends the Adapter class to RecyclerView.Adapter
@@ -45,6 +45,19 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewHolder> {
         // TypeCast Object to int type
         RecyclerViewModel recyclerViewModel = list.get(position);
         holder.text.setText(recyclerViewModel.getLogText());
+        if(recyclerViewModel.getColorInt() == 1) {
+            holder.text.setTextColor(Color.GREEN);
+        }else if(recyclerViewModel.getColorInt() == 2){
+            holder.text.setTextColor(Color.YELLOW);
+        }else if(recyclerViewModel.getColorInt() == 3){
+            holder.text.setTextColor(Color.GREEN);
+        }
+
+
+        else{
+            holder.text.setTextColor(Color.WHITE);
+
+        }
 
     }
 

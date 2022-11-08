@@ -62,7 +62,7 @@ public class LoginPage extends AppCompatActivity {
         email = String.valueOf(inputEmail.getText());
         password = String.valueOf(inputPassword.getText());
 
-        String postUrl = "login";
+        String postUrl = "";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         JSONObject postData = new JSONObject();
         try {
